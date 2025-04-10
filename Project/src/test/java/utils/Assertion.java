@@ -1,12 +1,12 @@
 package utils;
-
+ 
 import org.testng.Assert;
-
+ 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
+ 
 public class Assertion {
-
+ 
     /**
      * @Created by Pallavi
      * @Description Compares two text values and logs the result. Captures a screenshot in case of assertion failure or error.
@@ -29,7 +29,7 @@ public class Assertion {
             test.log(Status.WARNING, "Entered Wrong Credentials." + e1.getMessage());
         }
     }
-
+ 
     /**
      * @Created by Pallavi
      * @Description Verifies if the actual text contains the expected text and logs the result. Captures a screenshot in case of assertion failure or error.
