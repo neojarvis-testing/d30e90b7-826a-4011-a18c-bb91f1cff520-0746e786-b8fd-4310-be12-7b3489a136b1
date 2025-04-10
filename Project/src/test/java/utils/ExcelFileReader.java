@@ -27,8 +27,4 @@ public class ExcelFileReader {
         }
         return null;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 224a4afb12230e957fe30306da04939ce9951bb8
