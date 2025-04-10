@@ -9,7 +9,15 @@ public class ReadProperties {
  
     public static FileInputStream file;
     public static Properties prop;
-   
+ 
+    /**
+     * @Created by Mohit
+     * @Description Loads properties from a configuration file located at "config/browser.properties".
+     * This method initializes the FileInputStream and Properties objects to read property values.
+     * 
+     * @param None
+     * @return None
+     */
     public static void loadProperties() {
         String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
         try {
@@ -19,11 +27,9 @@ public class ReadProperties {
  
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
  
 }
- 

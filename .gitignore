@@ -1,4 +1,6 @@
 target/
-logs/
-screenshots/
-reports/
+logs
+screenshots
+reports
+testdata/
+config/
