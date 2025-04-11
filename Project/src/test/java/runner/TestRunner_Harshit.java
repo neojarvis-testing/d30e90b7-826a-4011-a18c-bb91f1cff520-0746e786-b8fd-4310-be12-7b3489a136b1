@@ -18,16 +18,20 @@ public class TestRunner_Harshit extends Base {
     public static ExtentTest test;
     public static ExtentReports reports;
 
+    @BeforeClass
+    public void report() {
+        reports = Reporter.generateExtentReport("SportsJam_Report");
+    }
+
     @BeforeMethod
     public void open() {
         openBrowser();
-
     }
 
     @Test(enabled = true)
-    public void testCase1() {
+    public void racket_action_clothing() {
         Racket_Actions_Harshit obj = new Racket_Actions_Harshit();
-        test = reports.createTest("Racket Module");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         obj.selectRacket(test);
         obj.applyFilter(test);
         obj.selectClothing(test);
@@ -41,14 +45,9 @@ public class TestRunner_Harshit extends Base {
         driver.quit();
     }
 
-    @BeforeClass
-    public void report() {
-        reports = Reporter.createExtentReporter("SPORT_JAM_Report");
-    }
-
     @AfterClass
     public void reportflush() {
-        Reporter.extentReportFlush();
+        reports.flush();
     }
 
 }

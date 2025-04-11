@@ -31,8 +31,8 @@ public class ActionShoesPriyanka extends Base{
     {
         helper.waitForElementToBeVisible(NavBarLocatorsPriyanka.hoverOverNavBarShoes, 5);
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
-        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 2));
-        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 2));
+        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 2));
+        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 2));
 
     }
     public void verifySubCategory()
@@ -61,7 +61,7 @@ public class ActionShoesPriyanka extends Base{
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnBadminton);
         helper.waitForElementToBeVisible(NavBarLocatorsPriyanka.hoverOverNavBarShoes, 2);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyBadmintonShoes),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 1) , test);
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyBadmintonShoes),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 1) , test);
     }
     catch(AssertionError e){
         e.printStackTrace();
@@ -73,9 +73,9 @@ public class ActionShoesPriyanka extends Base{
         try{
 
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
-        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 2));
+        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 2));
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnBasketBall);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyBasketBall),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 1) , test);
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyBasketBall),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 1, 1) , test);
         }
         catch(AssertionError e){
             e.printStackTrace();
@@ -88,7 +88,7 @@ public class ActionShoesPriyanka extends Base{
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
        
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnCricket);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyCricket),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 1) , test);
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyCricket),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 2, 1) , test);
         }
         catch(AssertionError e){
             e.printStackTrace();
@@ -100,9 +100,9 @@ public class ActionShoesPriyanka extends Base{
         try{
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnFootball);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyFootball),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 3, 1) , test);
-        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 2));
-        test.log(Status.PASS,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 2));
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyFootball),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 3, 1) , test);
+        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 1, 2));
+        test.log(Status.PASS,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 1, 2));
         }
         catch(AssertionError e){
             e.printStackTrace();
@@ -113,7 +113,7 @@ public class ActionShoesPriyanka extends Base{
         try{
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnRunning);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyRunning),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 4, 1) , test);
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyRunning),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 4, 1) , test);
         }
         catch(AssertionError e){
             e.printStackTrace();
@@ -126,10 +126,10 @@ public class ActionShoesPriyanka extends Base{
         try{
         helper.hoverOverElement(NavBarLocatorsPriyanka.hoverOverNavBarShoes);
         helper.clickOnElement(NavBarDropDownLocatorsPriyanka.clickOnSquash);
-        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifysquash),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 5, 1) , test);
+        Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifysquash),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 5, 1) , test);
 
         Screenshot.captureScreenShot("squash");
-        Reporter.attachScreenshotToReport("squash", test, "Screenshot attached to report");
+        Reporter.attachScreenshotToReport("squash", test, "Screenshot attached to report", driver);
         }
         catch(AssertionError e){
         e.printStackTrace();
