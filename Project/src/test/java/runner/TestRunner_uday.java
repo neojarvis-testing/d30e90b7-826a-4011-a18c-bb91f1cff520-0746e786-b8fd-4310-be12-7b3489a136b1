@@ -18,7 +18,7 @@ public class TestRunner_uday extends Base {
 
     @BeforeClass
     public void report() {
-        reports = Reporter.createExtentReporter("SPORT_JAM_Report");
+        reports = Reporter.generateExtentReport("SportsJam_Report");
     }
 
     @BeforeMethod
@@ -29,7 +29,7 @@ public class TestRunner_uday extends Base {
     @Test(enabled = true, priority = 1)
     public void testcase2() {
         HomepageActions_Uday uday = new HomepageActions_Uday();
-        test = reports.createTest("Racket_sports");
+        test = reports.createTest(Thread.currentThread().getName());
         uday.rackethoverclick(test);
         uday.clickingfirstProduct(test);
         uday.navigateBackHome(test);
@@ -38,7 +38,7 @@ public class TestRunner_uday extends Base {
     @Test(enabled = true, priority = 2)
     public void testcase3() {
         HomepageActions_Uday1 uday1 = new HomepageActions_Uday1();
-        test = reports.createTest("comparing_modules");
+        test = reports.createTest(Thread.currentThread().getName());
         uday1.hoversportsandsports(test);
         uday1.listingviewcompare(test);
         uday1.removingProducts(test);
@@ -51,6 +51,6 @@ public class TestRunner_uday extends Base {
 
     @AfterClass
     public void reportflush() {
-        Reporter.extentReportFlush();
+        reports.flush();
     }
 }

@@ -1,6 +1,7 @@
 package pages;
 import com.aventstack.extentreports.ExtentTest;
 import uistore.NavBarDropDownLocators_uday;
+import uistore.NavBarLocators_Mohit;
 import uistore.NavBarLocators_uday;
 import uistore.ProductDetails_uday;
 import uistore.Products_FilterLocators_uday;
@@ -12,9 +13,10 @@ public class HomepageActions_Uday {
     public void rackethoverclick(ExtentTest test){
         try{
         System.out.println("Hello1");
-        helperObj1.waitForElementToBeVisible(NavBarLocators_uday.Racket_sports, 10);
+        // helperObj1.waitForElementToBeVisible(NavBarLocators_uday.Racket_sports, 20);
+        helperObj1.waitForElementToBeVisible(NavBarLocators_Mohit.shopnow, 20);
         helperObj1.hoverOverElement(NavBarLocators_uday.Racket_sports);
-        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 10);
+        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 20);
         helperObj1.clickOnElement(NavBarDropDownLocators_uday.Badminton_Rackets);
         }
         catch(Exception e){
@@ -42,11 +44,12 @@ public class HomepageActions_Uday {
         try{
         System.out.println("Hello3");
         Base.driver.navigate().to(currUrl);
-        helperObj1.waitForElementToBeVisible(NavBarLocators_uday.Racket_sports, 10);
+        // helperObj1.waitForElementToBeVisible(NavBarLocators_uday.Racket_sports, 10);
+        helperObj1.waitForElementToBeVisible(NavBarLocators_Mohit.shopnow, 20);
         helperObj1.hoverOverElement(NavBarLocators_uday.Racket_sports);
-        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 10);
+        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 20);
         helperObj1.clickOnElement(NavBarDropDownLocators_uday.Badminton_shoes);
-        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 5);
+        helperObj1.waitForElementToBeVisible(NavBarDropDownLocators_uday.Badminton_Rackets, 20);
         helperObj1.clickOnElement(ProductDetails_uday.shoes_firstproduct); 
         helperObj1.clickOnElement(Products_FilterLocators_uday.size_selects);
         helperObj1.clickOnElement(Products_FilterLocators_uday.Addtocart_badmintonshoes);

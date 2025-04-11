@@ -20,12 +20,12 @@ public class FooterAction_Pallavi {
         helper.waitForElementToBeVisible(FooterLocators_Pallavi.registerLogin, 5);
         helper.hoverOverElement(FooterLocators_Pallavi.registerLogin);
         helper.clickOnElement(FooterLocators_Pallavi.registerLogin);
-        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 0);
+        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 0, 0);
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
         LoggerHandler.info(expectedTitle);
-        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 1);
-        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 1);
+        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 0, 1);
+        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 0, 1);
         
         test.log(Status.INFO, pageName +  verifiedMsg);
         LoggerHandler.info(pageName +  verifiedMsg);
@@ -36,13 +36,13 @@ public class FooterAction_Pallavi {
         helper.waitForElementToBeVisible(FooterLocators_Pallavi.deliveryCharges, 5);
         helper.hoverOverElement(FooterLocators_Pallavi.deliveryCharges);
         helper.clickOnElement(FooterLocators_Pallavi.deliveryCharges);
-        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 0);
+        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 1, 0);
         
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
         LoggerHandler.info(expectedTitle);
-        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 1);
-        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 1);
+        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 1, 1);
+        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 1, 1);
         test.log(Status.INFO, pageName +  verifiedMsg);
         LoggerHandler.info(pageName +  verifiedMsg);
     }
@@ -51,13 +51,13 @@ public class FooterAction_Pallavi {
         helper.waitForElementToBeVisible(FooterLocators_Pallavi.paymentOptions, 5);
         helper.hoverOverElement(FooterLocators_Pallavi.paymentOptions);
         helper.clickOnElement(FooterLocators_Pallavi.paymentOptions);
-        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 0);
+        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 2, 0);
         
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
         LoggerHandler.info(expectedTitle);
-        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 1);
-        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 1);
+        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 2, 1);
+        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 2, 1);
         test.log(Status.INFO, pageName +  verifiedMsg);
         LoggerHandler.info(pageName +  verifiedMsg);
     }
@@ -66,13 +66,13 @@ public class FooterAction_Pallavi {
         helper.waitForElementToBeVisible(FooterLocators_Pallavi.faq, 5);
         helper.hoverOverElement(FooterLocators_Pallavi.faq);
         helper.clickOnElement(FooterLocators_Pallavi.faq);
-        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 3, 0);
+        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 3, 0);
         
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
         LoggerHandler.info(expectedTitle);
-        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 3, 1);
-        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 3, 1);
+        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 3, 1);
+        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 3, 1);
         test.log(Status.INFO, pageName +  verifiedMsg);
         LoggerHandler.info(pageName +  verifiedMsg);
     }
@@ -81,13 +81,13 @@ public class FooterAction_Pallavi {
         helper.waitForElementToBeVisible(FooterLocators_Pallavi.returnPolicy, 5);
         helper.hoverOverElement(FooterLocators_Pallavi.returnPolicy);
         helper.clickOnElement(FooterLocators_Pallavi.returnPolicy);
-        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 4, 0);
+        String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 4, 0);
         
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
         LoggerHandler.info(expectedTitle);
-        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 4, 1);
-        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 4, 1);
+        String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 4, 1);
+        String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 4, 1);
         test.log(Status.INFO, pageName +  verifiedMsg);
         LoggerHandler.info(pageName +  verifiedMsg);
     }
@@ -98,14 +98,14 @@ public class FooterAction_Pallavi {
         helper.clickOnElement(FooterLocators_Pallavi.facebook);
         
         // helper.switchToNewWindow();
-        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 5, 0);
+        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 5, 0);
         
         // String expectedTitle = Base.driver.getTitle();
         // Assertion.useAssert(actualTitle,expectedTitle, test);
 
         // LoggerHandler.info(expectedTitle);
-        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 5, 1);
-        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 5, 1);
+        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 5, 1);
+        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 5, 1);
         // test.log(Status.INFO, pageName +  verifiedMsg);
         //LoggerHandler.info(pageName +  verifiedMsg);
         
@@ -121,14 +121,14 @@ public class FooterAction_Pallavi {
         helper.clickOnElement(FooterLocators_Pallavi.youtube);
         
         // helper.switchToNewWindow();
-        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 6, 0);
+        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 6, 0);
         
         // String expectedTitle = Base.driver.getTitle();
         // Assertion.useAssert(actualTitle,expectedTitle, test);
 
         // LoggerHandler.info(expectedTitle);
-        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 6, 1);
-        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 6, 1);
+        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 6, 1);
+        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 6, 1);
         // test.log(Status.INFO, pageName +  verifiedMsg);
         //LoggerHandler.info(pageName +  verifiedMsg); 
         // Base.driver.close();
@@ -143,15 +143,15 @@ public class FooterAction_Pallavi {
         helper.clickOnElement(FooterLocators_Pallavi.instagram);
         // helper.switchToNewWindow();
         
-        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 0);
+        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 0);
         
         // String expectedTitle = Base.driver.getTitle();
         // Assertion.useAssert(actualTitle,expectedTitle, test);
 
         // LoggerHandler.info(expectedTitle);
         
-        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 1);
-        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 1);
+        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 1);
+        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 1);
         // test.log(Status.INFO, pageName +  verifiedMsg);
         //LoggerHandler.info(pageName +  verifiedMsg);
         
@@ -165,14 +165,14 @@ public class FooterAction_Pallavi {
         helper.hoverOverElement(FooterLocators_Pallavi.twitter);
         helper.clickOnElement(FooterLocators_Pallavi.twitter); 
 
-        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 0);
+        // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 0);
         
         // String expectedTitle = Base.driver.getTitle();
         // Assertion.useAssert(actualTitle,expectedTitle, test);
         // LoggerHandler.info(expectedTitle);
         
-        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 1);
-        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 7, 1);
+        // String pageName = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 1);
+        // String verifiedMsg = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 1);
         // test.log(Status.INFO, pageName +  verifiedMsg);
 
 

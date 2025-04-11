@@ -19,7 +19,7 @@ public class TestRunnerPallavi extends Base {
     
     @BeforeClass
     public void rep(){
-        report = Reporter.createExtentReporter("SportsJam Report");
+        report = Reporter.generateExtentReport("SportsJam_Report");
         
     }
     
@@ -31,7 +31,7 @@ public class TestRunnerPallavi extends Base {
     @Test
     public void footerHereToHelp(){
         FooterAction_Pallavi a = new FooterAction_Pallavi();
-        test = report.createTest("Footer-Here To Help");
+        test = report.createTest(Thread.currentThread().getName());
         
         a.clickRegisterLogin(test);
         a.clickDeliveryCharges(test);

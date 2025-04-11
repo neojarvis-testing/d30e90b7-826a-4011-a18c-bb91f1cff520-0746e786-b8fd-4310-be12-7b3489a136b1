@@ -22,7 +22,7 @@ public class TestRunner_Priyanka extends Base{
     @BeforeClass
     public void report()
     {
-        reports =  Reporter.createExtentReporter("SPORT_JAM_Report");
+        reports =  Reporter.generateExtentReport("SportsJam_Report");
     }
 
    @BeforeMethod
@@ -36,7 +36,7 @@ public class TestRunner_Priyanka extends Base{
     public void pumaProducts()
     {
         ActionPumaHomepagePriyanka puma = new ActionPumaHomepagePriyanka();
-        test= reports.createTest("Brand_Module");
+        test= reports.createTest(Thread.currentThread().getName());
         puma.verifyHomepageandclickOnBrands(test);
         puma.verifyBrandPageandTypePuma(test);
         puma.clickNextAndverifySearchResults(test);
@@ -75,7 +75,7 @@ public class TestRunner_Priyanka extends Base{
       @AfterClass
     void flushRep() {
        // reports.flush();
-       Reporter.extentReportFlush();
+       reports.flush();
     }
 
 }
