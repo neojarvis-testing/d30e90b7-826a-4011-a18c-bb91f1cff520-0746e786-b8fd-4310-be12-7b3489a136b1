@@ -29,7 +29,7 @@ public class TestRunner_Harshit extends Base {
     }
 
     @Test(enabled = true)
-    public void testCase1() {
+    public void racket_action_clothing() {
         Racket_Actions_Harshit obj = new Racket_Actions_Harshit();
         test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         obj.selectRacket(test);
