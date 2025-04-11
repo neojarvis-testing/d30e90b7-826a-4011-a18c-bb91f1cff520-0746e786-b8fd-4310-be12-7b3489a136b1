@@ -27,18 +27,18 @@ public class TestRunner_uday extends Base {
     }
 
     @Test(enabled = true, priority = 1)
-    public void testcase2() {
+    public void racket_first_Prods() {
         HomepageActions_Uday uday = new HomepageActions_Uday();
-        test = reports.createTest(Thread.currentThread().getName());
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         uday.rackethoverclick(test);
         uday.clickingfirstProduct(test);
         uday.navigateBackHome(test);
     }
 
     @Test(enabled = true, priority = 2)
-    public void testcase3() {
+    public void comparing_sports_shoes() {
         HomepageActions_Uday1 uday1 = new HomepageActions_Uday1();
-        test = reports.createTest(Thread.currentThread().getName());
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         uday1.hoversportsandsports(test);
         uday1.listingviewcompare(test);
         uday1.removingProducts(test);

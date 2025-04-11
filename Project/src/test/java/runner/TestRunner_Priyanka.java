@@ -36,7 +36,7 @@ public class TestRunner_Priyanka extends Base{
     public void pumaProducts()
     {
         ActionPumaHomepagePriyanka puma = new ActionPumaHomepagePriyanka();
-        test= reports.createTest(Thread.currentThread().getName());
+        test= reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         puma.verifyHomepageandclickOnBrands(test);
         puma.verifyBrandPageandTypePuma(test);
         puma.clickNextAndverifySearchResults(test);
@@ -53,7 +53,7 @@ public class TestRunner_Priyanka extends Base{
     public void shoesNavBar()
     {
         ActionShoesPriyanka shoes = new ActionShoesPriyanka();
-        test= reports.createTest("Shoes_Module");
+        test= reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         shoes.verifyHomepage();
         shoes.hoveroverShoes(test);
         shoes.verifySubCategory();

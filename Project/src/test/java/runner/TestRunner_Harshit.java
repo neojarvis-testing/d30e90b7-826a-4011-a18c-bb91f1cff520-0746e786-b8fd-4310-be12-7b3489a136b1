@@ -31,7 +31,7 @@ public class TestRunner_Harshit extends Base {
     @Test(enabled = true)
     public void testCase1() {
         Racket_Actions_Harshit obj = new Racket_Actions_Harshit();
-        test = reports.createTest(Thread.currentThread().getName());
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         obj.selectRacket(test);
         obj.applyFilter(test);
         obj.selectClothing(test);

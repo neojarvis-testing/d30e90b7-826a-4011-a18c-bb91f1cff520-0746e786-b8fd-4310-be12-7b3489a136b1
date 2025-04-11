@@ -30,7 +30,7 @@ public class TestRunner_Mohit extends Base{
 
     @Test
     public void createAccount(){
-        test = reports.createTest(Thread.currentThread().getName());
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         HomepageAction_Mohit actions = new HomepageAction_Mohit();
         actions.navigateToLoginPage(test);
         actions.navigateToCreateAccountPage(test);
