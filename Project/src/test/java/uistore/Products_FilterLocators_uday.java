@@ -1,7 +1,7 @@
 package uistore;
-
+ 
 import org.openqa.selenium.By;
-
+ 
 public class Products_FilterLocators_uday {
     //testcase2
     public static By plusincrease_racketsports=By.cssSelector("a.icon-plus.qty-plus");
@@ -13,9 +13,9 @@ public class Products_FilterLocators_uday {
     public static By Addtocart_badmintonshoes=By.id("product-addtocart-button");
     //testcase3
     public static By compare1_product=By.xpath("//a[@class='action tocompare'][1]");
-    public static By compare2_product=By.xpath("//a[@class='action tocompare'][2]");
+    public static By compare2_product=By.xpath("(//a[@aria-label='Compare'])[2]");
     public static By compareproduct=By.cssSelector("a[href='https://sportsjam.in/catalog/product_compare/']");
-    public static By secondProductwrong=By.xpath("(//a[@class='action delete'])[2]");
+    public static By secondProductwrong=By.xpath("(//a[@title='Remove Product'])[2]");
     public static By firstProductwrong=By.xpath("(//a[@class='action delete'])[1]");
     public static By OKClick=By.cssSelector("button[class='action-primary action-accept']");
 }

@@ -20,7 +20,7 @@ public class TestRunner_Mohit extends Base{
 
     @BeforeClass
     public void baseReport(){
-        reports = Reporter.createExtentReporter("Report");
+        reports = Reporter.generateExtentReport("SportsJam_Report");
     }
 
     @BeforeMethod
@@ -30,7 +30,7 @@ public class TestRunner_Mohit extends Base{
 
     @Test
     public void createAccount(){
-        test = reports.createTest("LoginModule");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         HomepageAction_Mohit actions = new HomepageAction_Mohit();
         actions.navigateToLoginPage(test);
         actions.navigateToCreateAccountPage(test);

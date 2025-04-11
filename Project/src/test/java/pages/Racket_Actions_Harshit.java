@@ -12,42 +12,42 @@ import utils.LoggerHandler;
 import utils.ReadProperties;
 
 public class Racket_Actions_Harshit {
-        DriverHelper w = new DriverHelper(Base.driver);
+        DriverHelper helper = new DriverHelper(Base.driver);
 
         public void selectRacket(ExtentTest test) {
                 try {
 
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.searchBar, 2);
-                        w.clickOnElement(NavBarLocators_Harshit.searchBar);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.searchBar, 2);
+                        helper.clickOnElement(NavBarLocators_Harshit.searchBar);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         0, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         0, 1));
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.search, 2);
-                        w.clickOnElement(NavBarLocators_Harshit.search);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.search, 2);
+                        helper.clickOnElement(NavBarLocators_Harshit.search);
                         String adidas = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"),
-                                        "Sheet1", 0, 0);
+                                        "Harshit", 0, 0);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         1, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         1, 1));
-                        w.sendKeys(NavBarLocators_Harshit.search, adidas);
-                        w.hoverOverElement(NavBarLocators_Harshit.GoButton);
-                        w.clickOnElement(NavBarLocators_Harshit.GoButton);
+                        helper.sendKeys(NavBarLocators_Harshit.search, adidas);
+                        helper.hoverOverElement(NavBarLocators_Harshit.GoButton);
+                        helper.clickOnElement(NavBarLocators_Harshit.GoButton);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         2, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         2, 1));
-                        w.enterAction(NavBarLocators_Harshit.search);
+                        helper.enterAction(NavBarLocators_Harshit.search);
                         String actual = Base.driver.getCurrentUrl();
                         String expected = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"),
-                                        "Sheet1", 1, 0);
+                                        "Harshit", 1, 0);
                         Assertion.useAssert(actual, expected, test);
 
                 } catch (Exception e) {
@@ -61,41 +61,41 @@ public class Racket_Actions_Harshit {
 
         public void applyFilter(ExtentTest test) {
                 try {
-                        w.hoverOverElement(NavBarLocators_Harshit.RocketSports);
-                        w.clickOnElement(NavBarLocators_Harshit.RocketSports);
+                        helper.hoverOverElement(NavBarLocators_Harshit.RocketSports);
+                        helper.clickOnElement(NavBarLocators_Harshit.RocketSports);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         4, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         4, 1));
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.shoes, 3);
-                        w.hoverOverElement(NavBarLocators_Harshit.shoes);
-                        w.clickOnElement(NavBarLocators_Harshit.shoes);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.shoes, 3);
+                        helper.hoverOverElement(NavBarLocators_Harshit.shoes);
+                        helper.clickOnElement(NavBarLocators_Harshit.shoes);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         5, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         5, 1));
                         String actual2 = Base.driver.findElement(NavBarLocators_Harshit.Text1).getText();
                         String expected2 = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"),
-                                        "Sheet1", 2, 0);
+                                        "Harshit", 2, 0);
                         Assertion.useAssert(actual2, expected2, test);
-                        w.hoverOverElement(NavBarLocators_Harshit.removeRacket);
-                        w.clickOnElement(NavBarLocators_Harshit.removeRacket);
+                        helper.hoverOverElement(NavBarLocators_Harshit.removeRacket);
+                        helper.clickOnElement(NavBarLocators_Harshit.removeRacket);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         7, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         7, 1));
 
                         String actual3 = Base.driver.findElement(NavBarLocators_Harshit.Text2).getText();
 
                         String expected3 = ExcelFileReader.readExcelData(
                                         ReadProperties.prop.getProperty("path"),
-                                        "Sheet1", 3, 0);
+                                        "Harshit", 3, 0);
                         Assertion.useAssert(actual3, expected3, test);
 
                 } catch (Exception e) {
@@ -109,14 +109,14 @@ public class Racket_Actions_Harshit {
 
         public void selectClothing(ExtentTest test) {
                 try {
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.clothing, 3);
-                        w.hoverOverElement(NavBarLocators_Harshit.clothing);
-                        w.clickOnElement(NavBarLocators_Harshit.clothing);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.clothing, 3);
+                        helper.hoverOverElement(NavBarLocators_Harshit.clothing);
+                        helper.clickOnElement(NavBarLocators_Harshit.clothing);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         8, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         8, 1));
                 } catch (Exception e) {
                         e.printStackTrace();
@@ -129,14 +129,14 @@ public class Racket_Actions_Harshit {
 
         public void selectAccessories(ExtentTest test) {
                 try {
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.accessories, 3);
-                        w.hoverOverElement(NavBarLocators_Harshit.accessories);
-                        w.clickOnElement(NavBarLocators_Harshit.accessories);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.accessories, 3);
+                        helper.hoverOverElement(NavBarLocators_Harshit.accessories);
+                        helper.clickOnElement(NavBarLocators_Harshit.accessories);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         9, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         9, 1));
                 } catch (Exception e) {
                         e.printStackTrace();
@@ -150,30 +150,30 @@ public class Racket_Actions_Harshit {
         public void selectRunning(ExtentTest test) {
                 try {
 
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.running, 5);
-                        w.hoverOverElement(NavBarLocators_Harshit.running);
-                        w.clickOnElement(NavBarLocators_Harshit.running);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.running, 5);
+                        helper.hoverOverElement(NavBarLocators_Harshit.running);
+                        helper.clickOnElement(NavBarLocators_Harshit.running);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         10, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         10, 1));
-                        w.waitForElementToBeVisible(NavBarLocators_Harshit.clearAll, 4);
-                        w.hoverOverElement(NavBarLocators_Harshit.clearAll);
-                        w.clickOnElement(NavBarLocators_Harshit.clearAll);
+                        helper.waitForElementToBeVisible(NavBarLocators_Harshit.clearAll, 4);
+                        helper.hoverOverElement(NavBarLocators_Harshit.clearAll);
+                        helper.clickOnElement(NavBarLocators_Harshit.clearAll);
                         LoggerHandler.info(
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         11, 1));
                         test.log(Status.INFO,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         11, 1));
                         String actual4 = Base.driver.findElement(NavBarLocators_Harshit.Text1).getText();
                         String expected4 = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"),
-                                        "Sheet1", 2, 0);
+                                        "Harshit", 2, 0);
                         Assertion.useAssert(actual4, expected4, test);
                         test.log(Status.PASS,
-                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1",
+                                        ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Harshit",
                                                         12, 1));
 
                 } catch (Exception e) {

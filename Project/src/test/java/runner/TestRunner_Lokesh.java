@@ -21,7 +21,7 @@ public class TestRunner_Lokesh extends Base{
 
     @BeforeClass
     public void createReport() {
-        reports = Reporter.createExtentReporter("Sports_Jam");
+        reports = Reporter.generateExtentReport("SportsJam_Report");
     }
 
     @BeforeMethod
@@ -32,7 +32,7 @@ public class TestRunner_Lokesh extends Base{
 
     @Test(priority = 1, enabled = true)
     public void teamsport() {
-        test = reports.createTest("TestCase 4");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         LokeshTestCase4Action testCase4Action = new LokeshTestCase4Action();
         testCase4Action.NavBar_Batting_Gloves(test);
         testCase4Action.NavBar_Batting_Leg_Guards(test);
@@ -44,7 +44,7 @@ public class TestRunner_Lokesh extends Base{
 
     @Test(priority = 2, enabled = true)
     public void fitness() {
-        test = reports.createTest("TestCase 5");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
         LokeshTestCase5Action testCase5Action = new LokeshTestCase5Action();
         testCase5Action.NavBar_Fitness(test);
         testCase5Action.Gym_Gloves(test);

@@ -12,7 +12,6 @@ import utils.Base;
 import utils.DriverHelper;
 import utils.ExcelFileReader;
 import utils.ReadProperties;
-import utils.Reporter;
 
 public class HomepageAction_Mohit {
 
@@ -23,7 +22,7 @@ public class HomepageAction_Mohit {
     public void navigateToLoginPage(ExtentTest test) {
         
         helper.waitForElementToBeVisible(NavBarLocators_Mohit.userIcon, 10);
-        String expected = ExcelFileReader.readExcelData(path, "Sheet1", 6, 0);
+        String expected = ExcelFileReader.readExcelData(path, "Mohit", 6, 0);
 
         helper.waitForElementToBeVisible(NavBarLocators_Mohit.shopnow, 15);
         Assertion.useAssert(helper.getText(NavBarLocators_Mohit.shopnow), expected, test);
@@ -34,7 +33,7 @@ public class HomepageAction_Mohit {
         helper.clickOnElement(NavBarDropDownLocators_Mohit.login);
 
         helper.waitForElementToBeVisible(LoginModuleLocators_Mohit.createAccount, 15);
-        String verifyLogin = ExcelFileReader.readExcelData(path, "Sheet1", 7, 0);
+        String verifyLogin = ExcelFileReader.readExcelData(path, "Mohit", 7, 0);
         Assertion.assertionVerifyByContains(helper.getText(LoginModuleLocators_Mohit.createAccount), verifyLogin, test);
     }
 
@@ -47,12 +46,12 @@ public class HomepageAction_Mohit {
     public void createAccount(ExtentTest test) {
 
         String firstname = ExcelFileReader
-                .readExcelData(path, "Sheet1", 0, 0);
+                .readExcelData(path, "Mohit", 0, 0);
         String lastname = ExcelFileReader.readExcelData(path,
-                "Sheet1", 1, 0);
+                "Mohit", 1, 0);
         String email = generateRandomEmail(); // Generate random email
         String password = ExcelFileReader.readExcelData(path,
-                "Sheet1", 3, 0);
+                "Mohit", 3, 0);
 
         helper.clickOnElement(LoginModuleLocators_Mohit.firstName);
         helper.sendKeys(LoginModuleLocators_Mohit.firstName, firstname);
@@ -73,12 +72,10 @@ public class HomepageAction_Mohit {
 
         helper.waitForElementToBeVisible(LoginModuleLocators_Mohit.thankYouMessage, 15);
 
-        String expectedThankYou = ExcelFileReader.readExcelData(path, "Sheet1", 8, 0);
+        String expectedThankYou = ExcelFileReader.readExcelData(path, "Mohit", 8, 0);
         System.out.println(expectedThankYou);
 
         Assertion.useAssert(helper.getText(LoginModuleLocators_Mohit.thankYouMessage), expectedThankYou, test);
-
-        Reporter.attachScreenshotToReport("image", test, "image");
 
     }
 
@@ -87,7 +84,7 @@ public class HomepageAction_Mohit {
 
         helper.waitForElementToBeVisible(LoginModuleLocators_Mohit.verify5secWait, 15);
 
-        String expected5secText = ExcelFileReader.readExcelData(path, "Sheet1", 9, 0); 
+        String expected5secText = ExcelFileReader.readExcelData(path, "Mohit", 9, 0); 
         System.out.println(expected5secText);
         System.out.println("=="+helper.getText(LoginModuleLocators_Mohit.verify5secWait)+"====");
         Assertion.useAssert(helper.getText(LoginModuleLocators_Mohit.verify5secWait), expected5secText, test);
@@ -97,9 +94,9 @@ public class HomepageAction_Mohit {
 
     public void loginWithExistingUser(ExtentTest test) {
         String userEmail = ExcelFileReader
-                .readExcelData(path, "Sheet1", 4, 0);
+                .readExcelData(path, "Mohit", 4, 0);
         String userPassword = ExcelFileReader
-                .readExcelData(path, "Sheet1", 5, 0);
+                .readExcelData(path, "Mohit", 5, 0);
 
         helper.hoverOverElement(NavBarLocators_Mohit.userIcon);
         helper.clickOnElement(NavBarDropDownLocators_Mohit.login);
@@ -114,7 +111,7 @@ public class HomepageAction_Mohit {
 
         helper.waitForElementToBeVisible(LoginModuleLocators_Mohit.verifyErrorMessage, 15);
 
-        String expectedVerifyError = ExcelFileReader.readExcelData(path, "Sheet1", 10, 0);
+        String expectedVerifyError = ExcelFileReader.readExcelData(path, "Mohit", 10, 0);
         System.out.println(expectedVerifyError);
         Assertion.useAssert(helper.getText(LoginModuleLocators_Mohit.verifyErrorMessage), expectedVerifyError, test);
     }

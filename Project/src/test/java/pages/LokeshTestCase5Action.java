@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import uistore.NavBarDropDownLocators_Lokesh;
 import uistore.NavBarLocators_Lokesh;
+import uistore.NavBarLocators_Mohit;
 import uistore.ProductDetails_Lokesh;
 import uistore.Products_FilterLocators_Lokesh;
 import utils.Assertion;
@@ -22,18 +23,18 @@ public class LokeshTestCase5Action {
     public void NavBar_Fitness(ExtentTest test) {
 
         // helper.waitForElementToBeVisible(NavBarLocators_Lokesh.Fitness, 1);
+        helper.waitForElementToBeVisible(NavBarLocators_Mohit.shopnow, 20);
         helper.hoverOverElement(NavBarLocators_Lokesh.Fitness);
-        helper.waitForElementToBeVisible(NavBarDropDownLocators_Lokesh.Gym_Gloves, 2);
+        helper.waitForElementToBeVisible(NavBarDropDownLocators_Lokesh.Gym_Gloves, 20);
         helper.hoverOverElement(NavBarDropDownLocators_Lokesh.Gym_Gloves);
         helper.clickOnElement(NavBarDropDownLocators_Lokesh.Gym_Gloves);
         // verification for Gym Gloves page
         String actual1 = helper.getText(ProductDetails_Lokesh.Gym_Accessories);
-        String expected1 = ExcelFileReader.readExcelData(path, "Sheet1", 14, 0);
+        String expected1 = ExcelFileReader.readExcelData(path, "Lokesh", 14, 0);
         Assertion.assertionVerifyByContains(actual1, expected1, test);
     }
 
     public void Gym_Gloves(ExtentTest test) {
-
         helper.hoverOverElement(Products_FilterLocators_Lokesh.Brand_EverLast);
         helper.clickOnElement(Products_FilterLocators_Lokesh.Brand_EverLast);
         helper.hoverOverElement(ProductDetails_Lokesh.Everlast_mens_Gloves);
@@ -41,7 +42,7 @@ public class LokeshTestCase5Action {
         // verification for Everlast title
         String actual3 = Base.driver.getTitle();
         System.out.println(actual3);
-        String expected3 = ExcelFileReader.readExcelData(path, "Sheet1", 16, 0);
+        String expected3 = ExcelFileReader.readExcelData(path, "Lokesh", 16, 0);
         System.out.println(expected3);
         Assertion.assertionVerifyByContains(actual3, expected3, test);
 
