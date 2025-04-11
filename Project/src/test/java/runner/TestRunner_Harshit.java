@@ -9,48 +9,45 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.HomepageAction_Mohit;
+import pages.Racket_Actions_Harshit;
 import utils.Base;
 import utils.Reporter;
 
-public class TestRunner_Mohit extends Base{
+public class TestRunner_Harshit extends Base {
 
-    public ExtentTest test;
-    public ExtentReports reports;
+    public static ExtentTest test;
+    public static ExtentReports reports;
 
     @BeforeClass
-    public void baseReport(){
+    public void report() {
         reports = Reporter.generateExtentReport("SportsJam_Report");
     }
 
     @BeforeMethod
-    public void baseMethod(){
+    public void open() {
         openBrowser();
     }
 
-    @Test
-    public void createAccount(){
+    @Test(enabled = true)
+    public void racket_action_clothing() {
+        Racket_Actions_Harshit obj = new Racket_Actions_Harshit();
         test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
-        HomepageAction_Mohit actions = new HomepageAction_Mohit();
-        actions.navigateToLoginPage(test);
-        actions.navigateToCreateAccountPage(test);
-        actions.createAccount(test);
-        actions.logout(test);
-        actions.loginWithExistingUser(test);
+        obj.selectRacket(test);
+        obj.applyFilter(test);
+        obj.selectClothing(test);
+        obj.selectAccessories(test);
+        obj.selectRunning(test);
 
     }
 
     @AfterMethod
-    public void quitDriver(){
-        if(driver!= null){
-            driver.quit();
-        }
+    public void close() {
+        driver.quit();
     }
 
     @AfterClass
-    public void flushReport(){
+    public void reportflush() {
         reports.flush();
     }
-
 
 }

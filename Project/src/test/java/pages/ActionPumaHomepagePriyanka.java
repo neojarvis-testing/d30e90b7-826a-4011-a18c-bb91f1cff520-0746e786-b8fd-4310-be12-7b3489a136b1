@@ -40,16 +40,16 @@ public class ActionPumaHomepagePriyanka extends Base{
             Assert.assertTrue(true);
         }
         helper.clickOnElement(ProductDetailsPriyanka.searchBarBrand);
-        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 2));
-        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 2));
-        helper.sendKeys(ProductDetailsPriyanka.searchBarBrand, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 0));
+        LoggerHandler.info(ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 2, 2));
+        test.log(Status.INFO,ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 2, 2));
+        helper.sendKeys(ProductDetailsPriyanka.searchBarBrand, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 0));
         helper.clickOnElement(ProductDetailsPriyanka.searchiconInBrandPage);
 
     }
     public  void clickNextAndverifySearchResults(ExtentTest test)
     {
        
-        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.clickOnPumaLabel), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 0, 0),test);
+        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.clickOnPumaLabel), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 0, 0),test);
         helper.clickOnElement(ProductDetailsPriyanka.clickPumaLogo);
 
     }
@@ -92,7 +92,7 @@ public class ActionPumaHomepagePriyanka extends Base{
     {
        
         driver.switchTo().frame(Base.driver.findElement(ProductDetailsPriyanka.iframe));
-       Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyQuickViewlabel),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 1, 0),test);
+       Assertion.useAssert(helper.getText(ProductDetailsPriyanka.verifyQuickViewlabel),ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 1, 0),test);
        helper.hoverOverElement(ProductDetailsPriyanka.hoverOverWindowOpenByquickview);
        helper.scroll(100);
        helper.waitForElementToBeVisible(ProductDetailsPriyanka.clickOnAddtoWhishList, 2);
@@ -102,23 +102,23 @@ public class ActionPumaHomepagePriyanka extends Base{
     }
     public  void verifypromt(ExtentTest test)
     {
-        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.verifyErrorMessageWhishList), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 2, 0),test);
+        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.verifyErrorMessageWhishList), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 2, 0),test);
     }
     public void logincredentials()
     {  
 
         helper.waitForElementToBeVisible(ProductDetailsPriyanka.inputEmailAdd, 2);
         helper.clickOnElement(ProductDetailsPriyanka.inputEmailAdd);
-        helper.sendKeys(ProductDetailsPriyanka.inputEmailAdd, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 3, 0));
+        helper.sendKeys(ProductDetailsPriyanka.inputEmailAdd, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 3, 0));
         helper.waitForElementToBeVisible(ProductDetailsPriyanka.inputPassword, 2);
         helper.clickOnElement(ProductDetailsPriyanka.inputPassword);
-        helper.sendKeys(ProductDetailsPriyanka.inputPassword, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 4, 0));
+        helper.sendKeys(ProductDetailsPriyanka.inputPassword, ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 4, 0));
 
     }
     public  void signInAndverifyerrorMessage(ExtentTest test)
     {
         helper.clickOnElement(ProductDetailsPriyanka.clickOnSignIn);
-        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.verifyErrorMessageToSignIn), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Sheet1", 5, 0),test);
+        Assertion.assertionVerifyByContains(helper.getText(ProductDetailsPriyanka.verifyErrorMessageToSignIn), ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Priyanka", 5, 0),test);
 
     }
    

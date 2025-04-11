@@ -19,7 +19,7 @@ public class ReadProperties {
      * @return None
      */
     public static void loadProperties() {
-        String propertiesPath = System.getProperty("user.dir") + "/config/browser.properties";
+        String propertiesPath = System.getProperty("user.dir") + "/config/config.properties";
         try {
             file = new FileInputStream(propertiesPath);
             prop = new Properties();
@@ -33,3 +33,4 @@ public class ReadProperties {
     }
  
 }
+

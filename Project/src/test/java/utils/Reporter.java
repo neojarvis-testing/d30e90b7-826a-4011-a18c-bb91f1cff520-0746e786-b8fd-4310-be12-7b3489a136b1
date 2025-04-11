@@ -1,68 +1,88 @@
 package utils;
  
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
- 
+import java.util.Properties;
+import java.util.TimeZone;
+import com.google.common.io.Files;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
  
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.google.common.io.Files;
+public class Reporter {
  
-public class Reporter extends Base {
     public static TakesScreenshot ts;
-    public static ExtentReports report = null;
-    public static ExtentTest test = null;
  
-    /**
-     * @Created by Harshit Gupta
-     * @Description Creates an ExtentReports instance and attaches a SparkReporter to generate a report file.
-     * @param name Name for the report file.
-     * @return ExtentReports instance.
-     */
-    public static ExtentReports createExtentReporter(String name) {
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(
-                "/home/coder/project/workspace/Project/reports/" + name + ".html");
-        report = new ExtentReports();
+    private static Properties prop;
+    private static ExtentReports extentReport;
  
-        report.attachReporter(sparkReporter);
-        return report;
+ 
+    public static ExtentReports generateExtentReport() {
+        return generateExtentReport(null);
     }
  
-    /**
-     * @Created by Harshit Gupta
-     * @Description Creates an ExtentTest instance with the specified test name.
-     * @param extentTestName Name of the test for the report.
-     * @return ExtentTest instance.
-     */
-    public static ExtentTest ExtentTest(String extentTestName) {
-        test = report.createTest(extentTestName);
-        return test;
+    public static ExtentReports generateExtentReport(String reportName) {
+        if (extentReport == null) {
+            extentReport = createExtentReport(reportName);
+        }
+        return extentReport;
     }
  
-    /**
-     * @Created by Harshit Gupta
-     * @Description Flushes the report to write all logged data to the report file.
-     * @param None
-     * @return None
-     */
-    public static void extentReportFlush() {
-        report.flush();
+    public static ExtentReports createExtentReport(String reportName) {
+        ExtentReports extentReport = new ExtentReports();
+ 
+        // Load properties from browser.properties file
+        String filepath = System.getProperty("user.dir") + "/config/config.properties";
+        try {
+            FileInputStream file = new FileInputStream(filepath);
+            prop = new Properties();
+            prop.load(file);
+        } catch (IOException e) {
+            System.out.println(e.getLocalizedMessage());
+        }
+ 
+        // Get the current timestamp for the report name
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+        TimeZone istTimeZone = TimeZone.getTimeZone("Asia/Kolkata"); // IST timezone
+        dateFormat.setTimeZone(istTimeZone);
+        String timestamp = dateFormat.format(new Date());
+ 
+        // Define the report file path with the timestamp and provided report name
+        String reportFilePath = System.getProperty("user.dir") + "/reports/";
+        if (reportName == null || reportName.isEmpty()) {
+            reportName = "Test Report";
+        }
+        reportFilePath += reportName + "_" + timestamp + ".html";
+ 
+        File extentReportFile = new File(reportFilePath);
+ 
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFile);
+ 
+        sparkReporter.config().setTheme(Theme.DARK);
+        sparkReporter.config().setReportName("test Report");
+        sparkReporter.config().setDocumentTitle("test Automation Report");
+        sparkReporter.config().setTimeStampFormat("yyyy.MM.dd.HH.mm.ss");
+ 
+        extentReport.attachReporter(sparkReporter);
+ 
+        extentReport.setSystemInfo("Application URL", prop.getProperty("url"));
+       
+ 
+        return extentReport;
     }
  
-    /**
-     * @Created by Harshit Gupta
-     * @Description Captures a screenshot and saves it with the specified filename and timestamp.
-     * @param filename Base name for the screenshot file.
-     * @return The relative path to the saved screenshot file.
-     */
-    public static String captureScreenShot(String filename) {
+   
+ 
+    public static String captureScreenShot(String filename, WebDriver driver) {
         String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String name = filename + timestamp + ".png";
  
@@ -71,6 +91,7 @@ public class Reporter extends Base {
         ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
  
+        // Create the screenshots directory if it doesn't exist
         File screenshotsDir = new File(System.getProperty("user.dir") + "/reports");
  
         if (!screenshotsDir.exists()) {
@@ -86,20 +107,17 @@ public class Reporter extends Base {
         return destPath;
     }
  
-    /**
-     * @Created by Harshit Gupta
-     * @Description Attaches a screenshot to the ExtentTest instance in the report with the provided description.
-     * @param filename Base name for the screenshot file.
-     * @param test ExtentTest instance to attach the screenshot to.
-     * @param description Description of the screenshot.
-     * @return None
-     */
-    public static void attachScreenshotToReport(String filename, ExtentTest test, String description) {
+    public static void attachScreenshotToReport(String filename, ExtentTest test, String description,
+            WebDriver driver) {
         try {
             test.log(Status.INFO, description,
-                    MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(filename)).build());
+                    MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(filename, driver)).build());
         } catch (Exception e) {
             e.printStackTrace();
         }
+ 
     }
+ 
 }
+ 
+ 
