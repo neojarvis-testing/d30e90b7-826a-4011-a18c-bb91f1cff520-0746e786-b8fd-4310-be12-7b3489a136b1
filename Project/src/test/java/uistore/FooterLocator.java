@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class FooterLocators_Pallavi {
+public class FooterLocator {
 
     public static By registerLogin = By.cssSelector("a[href='/customer/account/login']");
     // public static By deliveryCharges = By.cssSelector("a[href='/delivery-information']");

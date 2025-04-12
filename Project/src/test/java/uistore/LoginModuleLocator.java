@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class LoginModuleLocators_Mohit {
+public class LoginModuleLocator {
 
     //Create account page
 

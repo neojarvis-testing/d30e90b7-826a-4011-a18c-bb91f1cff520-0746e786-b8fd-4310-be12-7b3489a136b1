@@ -2,7 +2,14 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class ProductDetailsPriyanka {
+public class ProductDetailsLocator {
+
+    //TestCase05
+    public static By Everlast_mens_Gloves = By.cssSelector("a[title='Everlast Mens Universal FIT Gloves (Size M&L, Blue)']");
+    public static By Add_to_cart = By.cssSelector("button[id='product-addtocart-button']");
+    public static By Gym_Accessories = By.xpath("(//span[contains(text(),'Gym Accessories')])[2]");
+    public static By correct_item_verification = By.xpath("(//a[contains(text(),'Everlast Mens Universal FIT Gloves')])[1]");
+    
     public static By searchBarBrand = By.cssSelector("input[name='keyword']");
     public static By searchiconInBrandPage = By.xpath("(//span[@class='search-icon-wrapper'])[2]");
     public static By clickPumaLogo = By.cssSelector("div[class='image']");
@@ -28,11 +35,16 @@ public class ProductDetailsPriyanka {
     public static By verifyRunning = By.id("page-title-heading");
     public static By verifysquash = By.id("page-title-heading");
 
-
+    //testcase2
+    public static   By Rackets_firstproduct=By.id("product-item-info_40047");
+    public static   By shoes_firstproduct=By.cssSelector("a[title='Yonex Blaze 2I Badminton Shoes (Red/Black/Gold)']");
+    //testcase3
+    public static   By list_viewproduct=By.id("mode-list");
+   // public static By verifyAddtocart=By.xpath("//span[contains(text(),'Product added to cart')]");
+    public static By verifyZipcode=By.id("form-product-zipcode");
+    public static By verifybeforecheckzipcode=By.xpath("//div[@class='message error']");
+    public static By verifyaddtocartButton=By.xpath("//button[@id='product-addtocart-button']//span");
+    // public static By verifybeforecheckzipcode=By.cssSelector("div[class='message error']");
     
-
-
-
-
 
 }

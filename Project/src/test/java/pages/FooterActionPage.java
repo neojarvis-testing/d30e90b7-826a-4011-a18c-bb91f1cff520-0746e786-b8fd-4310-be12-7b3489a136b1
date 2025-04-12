@@ -3,7 +3,7 @@ package pages;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import uistore.FooterLocators_Pallavi;
+import uistore.FooterLocator;
 import utils.Assertion;
 import utils.Base;
 import utils.DriverHelper;
@@ -12,14 +12,14 @@ import utils.LoggerHandler;
 import utils.ReadProperties;
 
 
-public class FooterAction_Pallavi {
+public class FooterActionPage {
     DriverHelper helper = new DriverHelper(Base.driver);
     
 
     public void clickRegisterLogin(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.registerLogin, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.registerLogin);
-        helper.clickOnElement(FooterLocators_Pallavi.registerLogin);
+        helper.waitForElementToBeVisible(FooterLocator.registerLogin, 5);
+        helper.hoverOverElement(FooterLocator.registerLogin);
+        helper.clickOnElement(FooterLocator.registerLogin);
         String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 0, 0);
         String expectedTitle = Base.driver.getTitle();
         Assertion.useAssert(actualTitle,expectedTitle, test);
@@ -33,9 +33,9 @@ public class FooterAction_Pallavi {
     }
 
     public void clickDeliveryCharges(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.deliveryCharges, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.deliveryCharges);
-        helper.clickOnElement(FooterLocators_Pallavi.deliveryCharges);
+        helper.waitForElementToBeVisible(FooterLocator.deliveryCharges, 5);
+        helper.hoverOverElement(FooterLocator.deliveryCharges);
+        helper.clickOnElement(FooterLocator.deliveryCharges);
         String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 1, 0);
         
         String expectedTitle = Base.driver.getTitle();
@@ -48,9 +48,9 @@ public class FooterAction_Pallavi {
     }
 
     public void clickPaymentOption(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.paymentOptions, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.paymentOptions);
-        helper.clickOnElement(FooterLocators_Pallavi.paymentOptions);
+        helper.waitForElementToBeVisible(FooterLocator.paymentOptions, 5);
+        helper.hoverOverElement(FooterLocator.paymentOptions);
+        helper.clickOnElement(FooterLocator.paymentOptions);
         String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 2, 0);
         
         String expectedTitle = Base.driver.getTitle();
@@ -63,9 +63,9 @@ public class FooterAction_Pallavi {
     }
 
     public void clickFAQ(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.faq, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.faq);
-        helper.clickOnElement(FooterLocators_Pallavi.faq);
+        helper.waitForElementToBeVisible(FooterLocator.faq, 5);
+        helper.hoverOverElement(FooterLocator.faq);
+        helper.clickOnElement(FooterLocator.faq);
         String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 3, 0);
         
         String expectedTitle = Base.driver.getTitle();
@@ -78,9 +78,9 @@ public class FooterAction_Pallavi {
     }
 
     public void clickReturnPolicy(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.returnPolicy, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.returnPolicy);
-        helper.clickOnElement(FooterLocators_Pallavi.returnPolicy);
+        helper.waitForElementToBeVisible(FooterLocator.returnPolicy, 5);
+        helper.hoverOverElement(FooterLocator.returnPolicy);
+        helper.clickOnElement(FooterLocator.returnPolicy);
         String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 4, 0);
         
         String expectedTitle = Base.driver.getTitle();
@@ -93,9 +93,9 @@ public class FooterAction_Pallavi {
     }
     
     public void clickFacebook(ExtentTest test) {
-        helper.hoverOverElement(FooterLocators_Pallavi.facebook);
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.facebook, 5);
-        helper.clickOnElement(FooterLocators_Pallavi.facebook);
+        helper.hoverOverElement(FooterLocator.facebook);
+        helper.waitForElementToBeVisible(FooterLocator.facebook, 5);
+        helper.clickOnElement(FooterLocator.facebook);
         
         // helper.switchToNewWindow();
         // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 5, 0);
@@ -116,9 +116,9 @@ public class FooterAction_Pallavi {
     }
     
     public void clickYoutube(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.youtube, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.youtube);
-        helper.clickOnElement(FooterLocators_Pallavi.youtube);
+        helper.waitForElementToBeVisible(FooterLocator.youtube, 5);
+        helper.hoverOverElement(FooterLocator.youtube);
+        helper.clickOnElement(FooterLocator.youtube);
         
         // helper.switchToNewWindow();
         // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 6, 0);
@@ -138,9 +138,9 @@ public class FooterAction_Pallavi {
     
     
     public void clickInstagram(ExtentTest test) {
-        helper.hoverOverElement(FooterLocators_Pallavi.instagram);
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.instagram, 5);
-        helper.clickOnElement(FooterLocators_Pallavi.instagram);
+        helper.hoverOverElement(FooterLocator.instagram);
+        helper.waitForElementToBeVisible(FooterLocator.instagram, 5);
+        helper.clickOnElement(FooterLocator.instagram);
         // helper.switchToNewWindow();
         
         // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 0);
@@ -161,9 +161,9 @@ public class FooterAction_Pallavi {
     }
     
     public void clickTwitter(ExtentTest test) {
-        helper.waitForElementToBeVisible(FooterLocators_Pallavi.twitter, 5);
-        helper.hoverOverElement(FooterLocators_Pallavi.twitter);
-        helper.clickOnElement(FooterLocators_Pallavi.twitter); 
+        helper.waitForElementToBeVisible(FooterLocator.twitter, 5);
+        helper.hoverOverElement(FooterLocator.twitter);
+        helper.clickOnElement(FooterLocator.twitter); 
 
         // String actualTitle = ExcelFileReader.readExcelData(ReadProperties.prop.getProperty("path"), "Pallavi", 7, 0);
         
