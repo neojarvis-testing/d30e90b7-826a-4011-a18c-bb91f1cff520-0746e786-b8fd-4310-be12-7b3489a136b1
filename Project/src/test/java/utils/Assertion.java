@@ -1,18 +1,19 @@
 package utils;
- 
+
 import org.testng.Assert;
- 
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
- 
+
 public class Assertion {
- 
+
     /**
      * @Created by Pallavi
-     * @Description Compares two text values and logs the result. Captures a screenshot in case of assertion failure or error.
-     * @param text The actual text to be verified.
+     * @Description Compares two text values and logs the result. Captures a
+     *              screenshot in case of assertion failure or error.
+     * @param text  The actual text to be verified.
      * @param text1 The expected text to compare against.
-     * @param test The ExtentTest instance used for reporting.
+     * @param test  The ExtentTest instance used for reporting.
      * @return None
      */
     public static void useAssert(String text, String text1, ExtentTest test) {
@@ -29,13 +30,16 @@ public class Assertion {
             test.log(Status.WARNING, "Entered Wrong Credentials." + e1.getMessage());
         }
     }
- 
+
     /**
      * @Created by Pallavi
-     * @Description Verifies if the actual text contains the expected text and logs the result. Captures a screenshot in case of assertion failure or error.
-     * @param actualText The actual text to be checked.
-     * @param expectedText The expected text that should be contained within the actual text.
-     * @param test The ExtentTest instance used for reporting.
+     * @Description Verifies if the actual text contains the expected text and logs
+     *              the result. Captures a screenshot in case of assertion failure
+     *              or error.
+     * @param actualText   The actual text to be checked.
+     * @param expectedText The expected text that should be contained within the
+     *                     actual text.
+     * @param test         The ExtentTest instance used for reporting.
      * @return None
      */
     public static void assertionVerifyByContains(String actualText, String expectedText, ExtentTest test) {

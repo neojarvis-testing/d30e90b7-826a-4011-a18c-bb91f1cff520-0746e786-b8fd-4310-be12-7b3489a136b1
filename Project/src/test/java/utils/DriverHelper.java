@@ -1,5 +1,5 @@
 package utils;
- 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
- 
+
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
- 
+
 public class DriverHelper {
     private WebDriver driver;
- 
+
     /**
      * @Created by Lokesh
      * @Description Constructor to initialize the WebDriver.
@@ -24,11 +24,12 @@ public class DriverHelper {
     public DriverHelper(WebDriver driver) {
         this.driver = driver;
     }
- 
+
     /**
      * @Created by Lokesh
-     * @Description Waits for an element to be visible within the specified timeout duration.
-     * @param locator Locator for the element.
+     * @Description Waits for an element to be visible within the specified timeout
+     *              duration.
+     * @param locator          Locator for the element.
      * @param timeoutInSeconds Timeout duration in seconds.
      * @return None
      */
@@ -40,7 +41,7 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Clicks on the specified element.
@@ -55,12 +56,12 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Sends the provided text to the specified element.
      * @param locator Locator for the element.
-     * @param data Text to be sent.
+     * @param data    Text to be sent.
      * @return None
      */
     public void sendKeys(By locator, String data) {
@@ -71,7 +72,7 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Retrieves text from the specified element.
@@ -87,7 +88,7 @@ public class DriverHelper {
             return " ";
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Sends the ENTER key action to the specified element.
@@ -102,7 +103,7 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Performs a hover-over action on the specified element.
@@ -118,7 +119,7 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Switches to a new window, excluding the parent window.
@@ -128,7 +129,7 @@ public class DriverHelper {
         try {
             String parentId = driver.getWindowHandle();
             Set<String> childIds = driver.getWindowHandles();
- 
+
             for (String id : childIds) {
                 if (!parentId.equals(id)) {
                     driver.switchTo().window(id);
@@ -138,7 +139,7 @@ public class DriverHelper {
             e.printStackTrace();
         }
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Scrolls the page vertically by the specified pixel value.
@@ -149,7 +150,7 @@ public class DriverHelper {
         JavascriptExecutor js = (JavascriptExecutor) Base.driver;
         js.executeScript("window.scrollBy(0," + pixel + ")", "");
     }
- 
+
     /**
      * @Created by Lokesh
      * @Description Retrieves all elements matching the specified XPath.
