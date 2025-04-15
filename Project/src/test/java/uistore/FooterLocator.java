@@ -5,8 +5,7 @@ import org.openqa.selenium.By;
 public class FooterLocator {
 
     public static By registerLogin = By.cssSelector("a[href='/customer/account/login']");
-    // public static By deliveryCharges =
-    // By.cssSelector("a[href='/delivery-information']");
+
     public static By deliveryCharges = By.xpath("//a[text()='Delivery & Charges']");
     public static By paymentOptions = By.cssSelector("a[href='/payment-options']");
     public static By faq = By.cssSelector("a[href='/sportsjam-frequently-asked-questions']");

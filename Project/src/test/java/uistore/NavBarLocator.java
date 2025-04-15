@@ -27,8 +27,7 @@ public class NavBarLocator {
     public static By Racket_sports = By.xpath("//a[@href='https://sportsjam.in/racket-sports']");
 
     public static By brandNavBar = By.cssSelector("a[href='https://sportsjam.in/shopbrand']");
-    // public static By hoverOverNavBarShoes =
-    // By.cssSelector("a[href='https://sportsjam.in/shoes']");
+
     public static By hoverOverNavBarShoes = By.xpath(
             "//li[@class='level0 category-item level-top parent ox-dropdown--megamenu parent']//a[@href='https://sportsjam.in/shoes']");
 

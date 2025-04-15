@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 
 public class LoginModuleLocator {
 
-        // Create account page
-
         public static By createAccount = By.cssSelector("[class='action create primary']");
         public static By firstName = By.id("firstname");
         public static By lastName = By.id("lastname");
@@ -14,13 +12,9 @@ public class LoginModuleLocator {
         public static By confirmPassword = By.id("password-confirmation");
         public static By confirmCreateButton = By.xpath("(//button[@id='send2'])[1]");
 
-        // My account page
-
         public static By thankYouMessage = By
                         .cssSelector("[data-bind='html: $parent.prepareMessageForHtml(message.text)']");
         public static By logout = By.xpath("(//a[@href='https://sportsjam.in/customer/account/logout/'])[1]");
-
-        // login page
 
         public static By emailLogin = By.id("email");
         public static By passwordLogin = By.id("pass");

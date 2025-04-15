@@ -15,6 +15,13 @@ public class RacketActionPage {
         DriverHelper helper = new DriverHelper(Base.driver);
         String path = ReadProperties.prop.getProperty("path");
 
+        /**
+         * Created by Harshit Gupta
+         * 
+         * @Description Selects a racket using the search bar functionality.
+         * @param test - ExtentTest instance for logging.
+         * @return void
+         */
         public void selectRacket(ExtentTest test) {
                 try {
 
@@ -52,14 +59,22 @@ public class RacketActionPage {
                         Assertion.useAssert(actual, expected, test);
 
                 } catch (Exception e) {
-                        e.printStackTrace();
-                } catch (AssertionError e) {
-                        e.printStackTrace();
-
-                }
+                        LoggerHandler.error(e.getMessage());
+                        test.log(Status.FAIL, e.getMessage());
+                    } catch (AssertionError e) {
+                        LoggerHandler.info(e.getMessage());
+                       test.log(Status.FAIL, e.getMessage());
+                    }
 
         }
 
+        /**
+         * Created by Harshit Gupta
+         * 
+         * @Description Applies various filters for sports equipment selection.
+         * @param test - ExtentTest instance for logging.
+         * @return void
+         */
         public void applyFilter(ExtentTest test) {
                 try {
                         helper.hoverOverElement(NavBarLocator.RocketSports);
@@ -100,14 +115,22 @@ public class RacketActionPage {
                         Assertion.useAssert(actual3, expected3, test);
 
                 } catch (Exception e) {
-                        e.printStackTrace();
-                } catch (AssertionError e) {
-                        e.printStackTrace();
-
-                }
+                        LoggerHandler.error(e.getMessage());
+                        test.log(Status.FAIL, e.getMessage());
+                    } catch (AssertionError e) {
+                        LoggerHandler.info(e.getMessage());
+                       test.log(Status.FAIL, e.getMessage());
+                    }
 
         }
 
+        /**
+         * Created by Harshit Gupta
+         * 
+         * @Description Selects clothing section from the navbar.
+         * @param test - ExtentTest instance for logging.
+         * @return void
+         */
         public void selectClothing(ExtentTest test) {
                 try {
                         helper.waitForElementToBeVisible(NavBarLocator.clothing, 3);
@@ -119,14 +142,30 @@ public class RacketActionPage {
                         test.log(Status.INFO,
                                         ExcelFileReader.readExcelData(path, "Harshit",
                                                         8, 1));
-                } catch (Exception e) {
-                        e.printStackTrace();
-                } catch (AssertionError e) {
-                        e.printStackTrace();
-
-                }
+                }catch (Exception e) {
+                        LoggerHandler.error(e.getMessage());
+                        test.log(Status.FAIL, e.getMessage());
+                    } catch (AssertionError e) {
+                        LoggerHandler.info(e.getMessage());
+                       test.log(Status.FAIL, e.getMessage());
+                    }
 
         }
+
+        /**
+         * Created by Harshit Gupta
+         *
+         * @Description This method selects the Accessories option from the navigation
+         *              bar.
+         *              It waits for the Accessories element to be visible, hovers over
+         *              it,
+         *              clicks on it, and logs relevant information.
+         *
+         * @param test ExtentTest instance used for logging information related to the
+         *             test execution.
+         *
+         * @return void This method does not return any value.
+         */
 
         public void selectAccessories(ExtentTest test) {
                 try {
@@ -140,14 +179,22 @@ public class RacketActionPage {
                                         ExcelFileReader.readExcelData(path, "Harshit",
                                                         9, 1));
                 } catch (Exception e) {
-                        e.printStackTrace();
-                } catch (AssertionError e) {
-                        e.printStackTrace();
-
-                }
+                        LoggerHandler.error(e.getMessage());
+                        test.log(Status.FAIL, e.getMessage());
+                    } catch (AssertionError e) {
+                        LoggerHandler.info(e.getMessage());
+                       test.log(Status.FAIL, e.getMessage());
+                    }
 
         }
 
+        /**
+         * Created by Harshit Gupta
+         * 
+         * @Description Selects running category from the navbar and clears filters.
+         * @param test - ExtentTest instance for logging.
+         * @return void
+         */
         public void selectRunning(ExtentTest test) {
                 try {
 
@@ -178,12 +225,12 @@ public class RacketActionPage {
                                                         12, 1));
 
                 } catch (Exception e) {
-                        e.printStackTrace();
-
-                } catch (AssertionError e) {
-                        e.printStackTrace();
-
-                }
+                        LoggerHandler.error(e.getMessage());
+                        test.log(Status.FAIL, e.getMessage());
+                    } catch (AssertionError e) {
+                        LoggerHandler.info(e.getMessage());
+                       test.log(Status.FAIL, e.getMessage());
+                    }
 
         }
 

@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 
 public class ProductDetailsLocator {
 
-        // TestCase05
         public static By Everlast_mens_Gloves = By
                         .cssSelector("a[title='Everlast Mens Universal FIT Gloves (Size M&L, Blue)']");
         public static By Add_to_cart = By.cssSelector("button[id='product-addtocart-button']");
@@ -42,18 +41,25 @@ public class ProductDetailsLocator {
         public static By verifyRunning = By.id("page-title-heading");
         public static By verifysquash = By.id("page-title-heading");
 
-        // testcase2
         public static By Rackets_firstproduct = By.id("product-item-info_40047");
         public static By shoes_firstproduct = By
                         .cssSelector("a[title='Yonex Blaze 2I Badminton Shoes (Red/Black/Gold)']");
-        // testcase3
+
         public static By list_viewproduct = By.id("mode-list");
-        // public static By verifyAddtocart=By.xpath("//span[contains(text(),'Product
-        // added to cart')]");
         public static By verifyZipcode = By.id("form-product-zipcode");
         public static By verifybeforecheckzipcode = By.xpath("//div[@class='message error']");
         public static By verifyaddtocartButton = By.xpath("//button[@id='product-addtocart-button']//span");
-        // public static By verifybeforecheckzipcode=By.cssSelector("div[class='message
-        // error']");
+        public static By verifyafterclickingaddtocart = By
+                        .xpath("(//a[@href='https://sportsjam.in/checkout/cart/'])[2]");
+        public static By verifycheckafterclicking = By.xpath("//div[@class='message success']");
+
+        public static By verifyclothingheading = By.cssSelector("span[data-ui-id='page-title-wrapper']");
+        public static By verifycompare1product = By.xpath(
+                        "//div[contains(text(),'You added product Yonex Mens Shorts (2692-Jet Black) to the ')]");
+        public static By verifycompare2product = By.xpath(
+                        "//div[contains(text(),'You added product Yonex Mens Shorts (2693-Jet Black) to the ')]");
+        public static By verifyremoving1product = By
+                        .xpath("//div[contains(text(),'You removed product Yonex Mens Shorts ')]");
+        public static By afterremoveallproducts = By.xpath("//div[contains(text(),'You have no items to compare.')]");
 
 }

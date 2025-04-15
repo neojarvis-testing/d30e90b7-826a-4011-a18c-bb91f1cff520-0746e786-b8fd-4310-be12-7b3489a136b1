@@ -19,24 +19,39 @@ import utils.ReadProperties;
 import utils.Reporter;
 import utils.Screenshot;
 
+/**
+ * ShoesActionPage class contains methods to perform actions and validations 
+ * related to the Shoes section in the application.
+ */
 public class ShoesActionPage extends Base {
+
     DriverHelper helper = new DriverHelper(driver);
     String path = ReadProperties.prop.getProperty("path");
 
+    /**
+     * Verifies if the current homepage URL matches the expected URL.
+     */
     public void verifyHomepage() {
         String actual = driver.getCurrentUrl();
         String expected = ReadProperties.prop.getProperty("url");
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(actual, expected, "Homepage URL verification failed.");
     }
 
+    /**
+     * Hovers over the 'Shoes' menu item in the navigation bar.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void hoveroverShoes(ExtentTest test) {
         helper.waitForElementToBeVisible(NavBarLocator.hoverOverNavBarShoes, 5);
         helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
         LoggerHandler.info(ExcelFileReader.readExcelData(path, "Priyanka", 0, 2));
         test.log(Status.INFO, ExcelFileReader.readExcelData(path, "Priyanka", 0, 2));
-
     }
 
+    /**
+     * Verifies the visibility of subcategories under the 'Shoes' section.
+     */
     public void verifySubCategory() {
         WebElement men = driver.findElement(By.xpath("(//li//span[contains(text(),'Men')])[3]"));
         if (men.isDisplayed()) {
@@ -50,9 +65,13 @@ public class ShoesActionPage extends Base {
         if (junior.isDisplayed()) {
             Assert.assertTrue(true);
         }
-
     }
 
+    /**
+     * Clicks on the 'Badminton' category in the 'Men' section and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void clickBadmintoninMensecandVerify(ExtentTest test) {
         try {
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
@@ -65,33 +84,52 @@ public class ShoesActionPage extends Base {
         }
     }
 
+    /**
+     * Hovers over the 'Shoes' section, clicks on 'Basketball' category, and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void hoverShoesandclickBasketBallandVerify(ExtentTest test) {
         try {
-
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
             test.log(Status.INFO, ExcelFileReader.readExcelData(path, "Priyanka", 0, 2));
             helper.clickOnElement(NavBarDropDownLocators.clickOnBasketBall);
             Assertion.useAssert(helper.getText(ProductDetailsLocator.verifyBasketBall),
                     ExcelFileReader.readExcelData(path, "Priyanka", 1, 1), test);
+        } catch (Exception e) {
+            LoggerHandler.error(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         } catch (AssertionError e) {
-            e.printStackTrace();
+            LoggerHandler.info(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         }
     }
 
+    /**
+     * Clicks on the 'Cricket' category and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void clickCricketandverify(ExtentTest test) {
         try {
-
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
-
             helper.clickOnElement(NavBarDropDownLocators.clickOnCricket);
             Assertion.useAssert(helper.getText(ProductDetailsLocator.verifyCricket),
                     ExcelFileReader.readExcelData(path, "Priyanka", 2, 1), test);
+        } catch (Exception e) {
+            LoggerHandler.error(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         } catch (AssertionError e) {
-            e.printStackTrace();
+            LoggerHandler.info(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         }
-
     }
 
+    /**
+     * Hovers over the 'Shoes' section, clicks on 'Football' category, and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void hoverShoesandClickOnFootball(ExtentTest test) {
         try {
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
@@ -100,36 +138,54 @@ public class ShoesActionPage extends Base {
                     ExcelFileReader.readExcelData(path, "Priyanka", 3, 1), test);
             LoggerHandler.info(ExcelFileReader.readExcelData(path, "Priyanka", 1, 2));
             test.log(Status.PASS, ExcelFileReader.readExcelData(path, "Priyanka", 1, 2));
+        } catch (Exception e) {
+            LoggerHandler.error(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         } catch (AssertionError e) {
-            e.printStackTrace();
+            LoggerHandler.info(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         }
     }
 
+    /**
+     * Hovers over the 'Shoes' section, clicks on 'Running' category, and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void hoverShoesAndclickRunningandverify(ExtentTest test) {
         try {
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
             helper.clickOnElement(NavBarDropDownLocators.clickOnRunning);
             Assertion.useAssert(helper.getText(ProductDetailsLocator.verifyRunning),
                     ExcelFileReader.readExcelData(path, "Priyanka", 4, 1), test);
+        } catch (Exception e) {
+            LoggerHandler.error(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         } catch (AssertionError e) {
-            e.printStackTrace();
+            LoggerHandler.info(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         }
-
     }
 
+    /**
+     * Hovers over the 'Shoes' section, clicks on 'Squash' category, and verifies details.
+     *
+     * @param test ExtentTest instance for logging actions in the test report.
+     */
     public void hoverShoesandclickSquashandVerify(ExtentTest test) {
         try {
             helper.hoverOverElement(NavBarLocator.hoverOverNavBarShoes);
             helper.clickOnElement(NavBarDropDownLocators.clickOnSquash);
             Assertion.useAssert(helper.getText(ProductDetailsLocator.verifysquash),
                     ExcelFileReader.readExcelData(path, "Priyanka", 5, 1), test);
-
             Screenshot.captureScreenShot("squash");
             Reporter.attachScreenshotToReport("squash", test, "Screenshot attached to report", driver);
+        } catch (Exception e) {
+            LoggerHandler.error(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         } catch (AssertionError e) {
-            e.printStackTrace();
+            LoggerHandler.info(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
         }
-
     }
-
 }
